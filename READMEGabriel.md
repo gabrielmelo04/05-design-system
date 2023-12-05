@@ -513,6 +513,11 @@ npm i @storybook/storybook-deployer --save-dev
     git commit -m "feat: Add core components" 
     git push origin main
 
+    -> No meu repositorio -> settings -> actions -> general -> mudar o workflow permisson para Read and write permission
+
+    -> Depois que rodar as actions, ir para o Settings, pages:
+        Deploy from a branch
+        gh-pages   /root   e salvar
 
 # Rodar o Storybook
 -> cd packages
