@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Components
 
 - [ ] Text
@@ -512,3 +513,6 @@ npm i @storybook/storybook-deployer --save-dev
 -> cd packages
 -> cd docs
 npm run storybook
+=======
+# 05-design-system
+>>>>>>> 4d0b2fc5b7807aab3992ad4df36b3db6ee4d0908
