@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Components
 
 - [ ] Text
@@ -506,13 +505,16 @@ npm i @storybook/storybook-deployer --save-dev
         "deploy-storybook": "storybook-to-ghpages"
 
 . Criar um repositório github
+    git init
+    git branch -M main
+    git remote add origin ...
+    git pull origin main --allow-unrelated-histories
     git add .
+    git commit -m "feat: Add core components" 
+    git push origin main
 
 
 # Rodar o Storybook
 -> cd packages
 -> cd docs
 npm run storybook
-=======
-# 05-design-system
->>>>>>> 4d0b2fc5b7807aab3992ad4df36b3db6ee4d0908
