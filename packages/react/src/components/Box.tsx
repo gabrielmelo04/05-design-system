@@ -3,7 +3,7 @@ import { styled } from "../styles";
 
 
 export const Box = styled('div', {
-    padding: '$4',
+    padding: '$6',
     borderRadius: '$md',
     backgroundColor: '$gray600',
     border: '1px solid $gray600',

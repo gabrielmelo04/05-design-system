@@ -1,5 +1,11 @@
 # @gabriel-ignite-ui-new-02/react
 
+## 12.0.1
+
+### Patch Changes
+
+- Add option to pass references to TextInput and adjust some styles
+
 ## 12.0.0
 
 ### Major Changes

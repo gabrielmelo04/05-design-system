@@ -7,3 +7,6 @@ export * from './components/TextInput';
 export * from './components/TextArea';
 export * from './components/CheckBox';
 export * from './components/MultiStep';
+
+//Para que as aplicações utilize as variaveis - quando vão instalar
+export * from './styles';
