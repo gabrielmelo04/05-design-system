@@ -548,6 +548,15 @@ npm i @storybook/storybook-deployer --save-dev
                 TURBO_TOKEN: AU933VKyqOSAO21nbTxu0m4R
                 TURBO_TEAM: gabriels-projects-3be34539
 
+    -> 
+        . No site: https://turbo.build/repo/docs/handbook/publishing-packages/versioning-and-publishing
+        . https://github.com/changesets/action
+        . Copiar o with publish
+        . Criar na pasta workflow:
+          . release.yml -> e colar
+        . Ir no site do npm -> criar um token
+        . Ir no git hub do projeto -> sttings -> secrets variabels -> actions e cola o token
+
 # Rodar o Storybook
 -> cd packages
 -> cd docs
