@@ -538,7 +538,7 @@ npm i @storybook/storybook-deployer --save-dev
     npm run release
 
 
-    -> Use Remote Caching from external CI/CD
+    -> Use Remote Caching from external CI/CD ->  carregar mais rapido no github por causa das nossas caches
         . No site Vercel
         https://vercel.com/docs/rest-api#introduction/api-basics/authentication
 
