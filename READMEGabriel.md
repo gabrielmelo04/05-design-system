@@ -36,7 +36,7 @@
         -> npm init -y
         -> npm i typescript -D
         -> npm i tsup -D
-        -> Ir no package.json da pasta react -> mudar o nome para "@ignite-ui/react"
+        -> Ir no package.json da pasta react -> mudar o nome para "@gabriel-ignite-ui-new-02/react"
         -> Ir no package.json da pasta react, colocar:
             "scripts": {
                 "build": "tsup src/index.ts --format esm,cjs --dts", // -> formatar em esm e cjs (javascript) e exportar as definições de tipagem (--dts)
@@ -59,7 +59,7 @@
             }
         -> Agora ir na pasta tokens, deletar o node_modules
         -> Agora ir na pasta react, deletar o node_modules
-        -> Agora ir na pasta react -> package.json -> nas dependencias acrescentar: "@ignite-ui/tokens": "*",
+        -> Agora ir na pasta react -> package.json -> nas dependencias acrescentar: "@gabriel-ignite-ui-new-02/tokens": "*",
         -> Na pasta raiz do projeto .../05-design-system -> npm i
 
         -> Para que a gente consiga fazer as importações que estão na pasta tokens, precisamos fazer isso:
@@ -72,14 +72,14 @@
                 -> npm run build
                 -> Com isso no react -> consigo importar as coisas da pasta tokens:
                     -> Ir na pasta react -> src -> index.ts:
-                        -> import { colors } from '@ignite-ui/tokens';
+                        -> import { colors } from '@gabriel-ignite-ui-new-02/tokens';
 
                             console.log(colors);
     
     -> Configurar typscript para que seja compartilhado em varios pacotes:
         -> Dentro na pasta packages, criar uma pasta ts-config
         -> Nessa nova pasta, npm init -y
-        -> No package.json da pasta ts-config, mudar o nome para: "name": "@ignite-ui/ts-config", e mudar as liçensas para MIT, "private": true
+        -> No package.json da pasta ts-config, mudar o nome para: "name": "@gabriel-ignite-ui-new-02/ts-config", e mudar as liçensas para MIT, "private": true
         -> Criar um arquivo base.json:
             {
                 "compilerOptions": {
@@ -111,11 +111,11 @@
             }
         -> Agora na pasta tokens, no packages.json:
             -> devDependencies: {
-                "@ignite-ui/ts-config": "*"
+                "@gabriel-ignite-ui-new-02/ts-config": "*"
             }
         -> Agora na pasta react, no packages.json:
             -> devDependencies: {
-                "@ignite-ui/ts-config": "*"
+                "@gabriel-ignite-ui-new-02/ts-config": "*"
             }
         
         ->Volta na raiz do projeto e execute o comando:
@@ -123,13 +123,13 @@
 
         -> Dentro da pasta tokens -> tsconfig.json - apagar tudo e escrever:
             {
-                "extends": "@ignite-ui/ts-config/base.json",
+                "extends": "@gabriel-ignite-ui-new-02/ts-config/base.json",
                 "include": ["src"]
             }
 
         ->  Dentro da pasta react -> tsconfig.json- apagar tudo e escrever:
             {
-                "extends": "@ignite-ui/ts-config/react.json",
+                "extends": "@gabriel-ignite-ui-new-02/ts-config/react.json",
                 "include": ["src"]
             }
     
@@ -148,7 +148,7 @@
 
             Agora podemos criar um componente em react para testar:
              src -> index.tsx =
-                    import { colors } from '@ignite-ui/tokens';
+                    import { colors } from '@gabriel-ignite-ui-new-02/tokens';
 
                     export function App(){
                         return(
@@ -164,7 +164,7 @@
 
         - Na pasta react - src crair a pasta styles:
             criar index.ts:
-                import { colors, fontSizes, fontWeights, fonts, lineHeights, radii, space } from "@ignite-ui/tokens";
+                import { colors, fontSizes, fontWeights, fonts, lineHeights, radii, space } from "@gabriel-ignite-ui-new-02/tokens";
                 import { createStitches, defaultThemeMap } from "@stitches/react";
 
                 export const { styled, css, globalCss, keyframes, getCssText, theme, createTheme, config } = createStitches({
@@ -225,8 +225,8 @@
 
             -> No package.json do docs:
                 "dependencies": {
-                    "@ignite-ui/react": "*",
-                    "@ignite-ui/tokens": "*",
+                    "@gabriel-ignite-ui-new-02/react": "*",
+                    "@gabriel-ignite-ui-new-02/tokens": "*",
                     "react": "^18.2.0",
                     "react-dom": "^18.2.0"
                 },
@@ -234,7 +234,7 @@
             -> No cmd react -> npm run dev
 
             ->No arquivo Button.stories.tsx:
-                import { Button } from '@ignite-ui/react';
+                import { Button } from '@gabriel-ignite-ui-new-02/react';
                 import type { StoryObj, Meta } from '@storybook/react';
 
                 export default {
@@ -297,7 +297,7 @@
 
 
                 -> Dentro do src do Docs -> components -> Criar o arquivo ColorsGrid.tsx:
-                    import { colors } from '@ignite-ui/tokens';
+                    import { colors } from '@gabriel-ignite-ui-new-02/tokens';
                     import { getContrast } from 'polished';
 
                     export function ColorsGrid(){
@@ -360,7 +360,7 @@
                     -> Criar o arquivo dentro da pasta tokens:
                         import { Meta } from '@storybook/addon-docs'
                         import { TokensGrid } from '../../components/TokensGrid'
-                        import { space } from '@ignite-ui/tokens'
+                        import { space } from '@gabriel-ignite-ui-new-02/tokens'
 
                         <Meta title="Tokens/Space" />
 
@@ -412,7 +412,7 @@
 
                         .Dentro da pasta docs -> stories -> criar: Box.stories.tsx:
                             import type { StoryObj, Meta } from '@storybook/react';
-                            import { Box, BoxProps } from '@ignite-ui/react';
+                            import { Box, BoxProps } from '@gabriel-ignite-ui-new-02/react';
 
                             export default {
                                 title: 'Surfaces/Box',
@@ -519,7 +519,40 @@ npm i @storybook/storybook-deployer --save-dev
         Deploy from a branch
         gh-pages   /root   e salvar
 
+-> Changesets -> usando para pacotes publicos
+    npm i @changesets/cli -D
+    npx changeset init
+    
+    .Em .chageset -> config.json
+        "access": "public",
+        "ignore": ["@gabriel-ignite-ui-new-02/docs"]
+
+    . Precisar ter uma conta no npm
+
+    Executar no terminal raiz:
+    npm login
+    Criar uma nova organização
+
+    npm run changeset
+    npm run version-packages
+    npm run release
+
+
+    -> Use Remote Caching from external CI/CD
+        . No site Vercel
+        https://vercel.com/docs/rest-api#introduction/api-basics/authentication
+
+        . Dentro deploy-docs.yml:
+            - run: npm run build
+              env:
+                TURBO_TOKEN: AU933VKyqOSAO21nbTxu0m4R
+                TURBO_TEAM: gabriels-projects-3be34539
+
 # Rodar o Storybook
 -> cd packages
 -> cd docs
 npm run storybook
+
+"release": "turbo run build --filter=!packages/docs && changeset publish"
+
+// "build": "storybook build && touch ./storybook-static/.nojekyll",

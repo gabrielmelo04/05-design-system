@@ -1,6 +1,6 @@
 {
-  "name": "@ignite-ui/tokens",
-  "version": "1.0.0",
+  "name": "@gabriel-ignite-ui-new-02/tokens",
+  "version": "3.0.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -13,7 +13,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@ignite-ui/ts-config": "*",
+    "@gabriel-ignite-ui-new-02/ts-config": "*",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2"
   }

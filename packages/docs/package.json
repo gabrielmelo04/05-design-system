@@ -1,12 +1,12 @@
 {
-  "name": "docs",
+  "name": "@gabriel-ignite-ui-new-02/docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build-vite": "tsc && vite build",
-    "build": "storybook build && touch ./storybook-static/.nojekyll",
+    "build": "storybook build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -14,8 +14,8 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@ignite-ui/react": "*",
-    "@ignite-ui/tokens": "*",
+    "@gabriel-ignite-ui-new-02/react": "*",
+    "@gabriel-ignite-ui-new-02/tokens": "*",
     "@storybook/addon-a11y": "^7.6.0",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",
